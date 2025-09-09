@@ -39,7 +39,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory('/'),  // Всегда используем корневой путь для маршрутизации
   routes,
   scrollBehavior(to, from, savedPosition) {
     // Если есть якорь (например #section), прокручиваем к нему

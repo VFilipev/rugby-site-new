@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "NODE_ENV=production vite build",
+    "build:django": "NODE_ENV=production vite build && echo '✅ Vue собран для Django. Запустите Django сервер для просмотра.'",
     "preview": "vite preview",
     "test:unit": "vitest",
     "lint": "eslint . --fix",
