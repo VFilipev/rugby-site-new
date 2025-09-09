@@ -1,0 +1,30 @@
+[Unit]
+Description=Rugby Site Django Application
+After=network.target
+
+[Service]
+Type=exec
+User=www-data
+Group=www-data
+WorkingDirectory=/path/to/rugby-site/backend
+Environment=DJANGO_SETTINGS_MODULE=rugby_backend.settings_production
+ExecStart=/path/to/rugby-site/venv/bin/python manage.py runserver 127.0.0.1:8008
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=3
+
+# Логирование
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=rugby-site
+
+# Безопасность
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/path/to/rugby-site/backend/media
+ReadWritePaths=/path/to/rugby-site/backend/logs
+
+[Install]
+WantedBy=multi-user.target
