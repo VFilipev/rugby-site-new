@@ -8,11 +8,11 @@ import { Players } from '@/api'
 const manPlayersList = ref([])
 const womanPlayersList = ref([])
 const getManPlayersList = async () => {
-    const response = await Players.getList({team: 1})
+    const response = await Players.getList({team: 1, ordering: 'order'})
     manPlayersList.value = response
 }
 const getWomanPlayersList = async () => {
-    const response = await Players.getList({team: 2})
+    const response = await Players.getList({team: 2, ordering: 'order'})
     womanPlayersList.value = response
 }
 // Router
