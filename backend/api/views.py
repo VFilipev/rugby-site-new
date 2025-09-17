@@ -43,15 +43,15 @@ class PlayerViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['team', 'staff_type', 'season', 'is_hidden']
     search_fields = ['full_name', 'team__name']
-    ordering_fields = ['full_name', 'team__name']
-    ordering = ['team__name', 'full_name']
+    ordering_fields = ['full_name', 'team__name', 'order']
+    ordering = ['order']
 
     @action(detail=False, methods=['get'])
     def by_team(self, request):
         """Получить игроков по команде"""
         team_id = request.query_params.get('team_id')
         if team_id:
-            players = self.queryset.filter(team_id=team_id, is_hidden=False)
+            players = self.queryset.filter(team_id=team_id, is_hidden=False).order_by('order')
             serializer = self.get_serializer(players, many=True)
             return Response(serializer.data)
         return Response([])
@@ -61,7 +61,7 @@ class PlayerViewSet(viewsets.ModelViewSet):
         """Получить игроков по сезону"""
         season_id = request.query_params.get('season_id')
         if season_id:
-            players = self.queryset.filter(season_id=season_id, is_hidden=False)
+            players = self.queryset.filter(season_id=season_id, is_hidden=False).order_by('order')
             serializer = self.get_serializer(players, many=True)
             return Response(serializer.data)
         return Response([])

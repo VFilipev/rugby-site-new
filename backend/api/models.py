@@ -128,9 +128,12 @@ class School(models.Model):
     """Модель школы"""
     name = models.CharField(max_length=200, verbose_name="Название")
     order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
+
     class Meta:
         verbose_name = "Школа"
         verbose_name_plural = "Школы"
+        ordering = ['order']
+
     def __str__(self):
         return self.name
 class SchoolLocation(models.Model):

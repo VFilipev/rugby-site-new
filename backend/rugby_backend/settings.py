@@ -168,3 +168,13 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_ALL_ORIGINS = True  # Only for development
+
+# CSRF settings
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",  # Vite default port
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",  # Alternative Vue dev server port
+    "http://127.0.0.1:3000",
+    "http://localhost:8080",  # Additional development port
+    "http://127.0.0.1:8080",  # Additional development port
+]

@@ -44,6 +44,12 @@ CORS_ALLOWED_ORIGINS = [
 # Remove development CORS setting
 CORS_ALLOW_ALL_ORIGINS = False
 
+# CSRF settings for production
+CSRF_TRUSTED_ORIGINS = [
+    "https://rugbyperm.ru",  # Замените на ваш домен
+    "https://www.rugbyperm.ru",  # Замените на ваш домен с www
+]
+
 # Security settings for production
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True

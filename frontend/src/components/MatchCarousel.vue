@@ -46,7 +46,7 @@
                             {{ card.position }} МЕСТО</div>
                         <div v-else class="place-result">-</div>
                         <div class="team-name">
-                            {{ card.team }}
+                            <VMarkdownView :content="card.team" :mode="mode" />
                         </div>
                     </div>
                     <div class="match-location" v-html="formatVenue(card.venue)">
@@ -61,7 +61,6 @@
 import { ref, onMounted, onUnmounted, computed, nextTick } from 'vue'
 import { Matches, Tournaments } from '@/api'
 import moment from 'moment'
-
 const months = [
     'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
     'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
