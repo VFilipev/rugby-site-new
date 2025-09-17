@@ -366,7 +366,7 @@ onUnmounted(() => {
 .dropdown-menu-custom.show {
     opacity: 1;
     visibility: visible;
-    transform: translate(-20px, 62px);
+    transform: translate(-20px, 67px);
 }
 
 .dropdown-list {
