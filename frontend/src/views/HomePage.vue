@@ -210,9 +210,18 @@
                 </div>
             </div>
             <div class="container-logo" style="margin-bottom: 100px;">
+                <!-- TODO ДОБАВИТЬ ДЛЯ СПОНСОРОВ API-->
+                <!-- <template v-for="sponsor in sponsorsList" :key="sponsor.id">
+                    <div class="logo-1">
+                        <a :href="sponsor.url" target="_blank" rel="noopener noreferrer">
+                            <img :src="sponsor.logo_url" :alt="sponsor.name" style="max-height: 114px">
+                        </a>
+                    </div>
+                </template> -->
+
                 <div class="logo-1">
                     <a href="https://www.eurochem.ru/" target="_blank" rel="noopener noreferrer" @click="openEuroChem">
-                        <img src="@/assets/eurochem_logo.svg" alt="Лого Еврохим">
+                        <img src="@/assets/eurochem_logo.png" style="max-height: 114px" alt="Лого Еврохим">
                     </a>
                 </div>
                 <div class="logo-2">
@@ -246,6 +255,7 @@ import SponsorModal from '@/components/SponsorModal.vue'
 import EventHomePage from '@/components/EventHomePage.vue'
 import FloatingButton from '@/components/FloatingButton.vue'
 import { useNavigation } from '@/composables/useNavigation'
+import { Sponsors } from '@/api'
 
 // Navigation composable
 const {
@@ -275,7 +285,11 @@ const {
 const isVideoReady = ref(false)
 const heroVideo = ref(null)
 
-
+const sponsorsList = ref([])
+const getSponsorsList = async () => {
+    const response = await Sponsors.getList()
+    sponsorsList.value = response
+}
 // Sponsor modal state
 const isSponsorModalOpen = ref(false)
 
@@ -329,8 +343,8 @@ const handleKeyDown = (event) => {
         if (isSponsorModalOpen.value) {
             closeSponsorModal()
         }
-        }
     }
+}
 
 // Функция для установки правильной высоты viewport на мобильных устройствах
 const setVhProperty = () => {
@@ -340,6 +354,7 @@ const setVhProperty = () => {
 
 // Добавляем и удаляем глобальный обработчик клика
 onMounted(() => {
+    getSponsorsList()
     document.addEventListener('keydown', handleKeyDown)
 
     // Устанавливаем правильную высоту viewport
@@ -1254,7 +1269,7 @@ html {
     }
 
     .logo-1 img {
-        width: 135px;
+        max-height: 135px;
         height: auto;
     }
 
