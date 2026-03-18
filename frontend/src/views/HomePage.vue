@@ -157,7 +157,7 @@
             </picture>
             <!-- Video -->
             <video v-show="isVideoReady" ref="heroVideo" class="hero-bg hero-video" autoplay muted loop playsinline
-                preload="auto" @loadeddata="onVideoLoaded" @error="onVideoError" @canplay="onVideoCanPlay">
+                preload="metadata" @loadeddata="onVideoLoaded" @error="onVideoError" @canplay="onVideoCanPlay">
                 <source src="/video/output.webm" type="video/webm">
                 <!-- Fallback to image if video fails -->
                 <img src="/video/first-frame.png" alt="Команда Витязь" class="hero-bg">
@@ -354,7 +354,13 @@ const setVhProperty = () => {
 
 // Добавляем и удаляем глобальный обработчик клика
 onMounted(() => {
-    getSponsorsList()
+    // Спонсоры не влияют на первый экран — грузим после первого кадра/в idle
+    const loadSponsors = () => { void getSponsorsList() }
+    if (typeof requestIdleCallback === 'function') {
+        requestIdleCallback(loadSponsors, { timeout: 2000 })
+    } else {
+        setTimeout(loadSponsors, 0)
+    }
     document.addEventListener('keydown', handleKeyDown)
 
     // Устанавливаем правильную высоту viewport
@@ -362,9 +368,14 @@ onMounted(() => {
     window.addEventListener('resize', setVhProperty)
 
 
-    // Предзагружаем видео
-    if (heroVideo.value) {
-        heroVideo.value.load()
+    // Видео не должно мешать LCP — даём странице отрисоваться, потом подгружаем
+    const loadVideo = () => {
+        if (heroVideo.value) heroVideo.value.load()
+    }
+    if (typeof requestIdleCallback === 'function') {
+        requestIdleCallback(loadVideo, { timeout: 2500 })
+    } else {
+        setTimeout(loadVideo, 300)
     }
 })
 

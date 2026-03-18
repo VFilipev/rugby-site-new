@@ -4,7 +4,7 @@ import AppFooter from '@/components/AppFooter.vue'
 </script>
 <template>
     <div>
-        <AppHeader />
+        <AppHeader :logoVariant="'with'"/>
         <section class="man-team-section">
             <div class="team-container">
                 <!-- Заголовок ЗАЛ СЛАВЫ -->
