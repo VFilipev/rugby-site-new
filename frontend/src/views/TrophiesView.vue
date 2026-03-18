@@ -225,8 +225,9 @@ import AppFooter from '@/components/AppFooter.vue'
 
 .section-title {
     color: #28223C;
-    font-size: 57px;
-    font-family: 'Rossika';
+    font-size: 30px;
+    font-family: 'Golos Text';
+    font-weight: 700;
     letter-spacing: -0.02em;
 }
 

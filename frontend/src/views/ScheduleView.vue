@@ -332,8 +332,9 @@ const closeModal = () => {
 
 .section-title {
     color: #28223C;
-    font-size: 57px;
-    font-family: 'Rossika';
+    font-size: 30px;
+    font-family: 'Golos Text';
+    font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1;
 }
@@ -533,9 +534,9 @@ const closeModal = () => {
     }
 
     .mobile-title {
-        font-family: 'Rossika';
-        font-size: 40px;
-        font-weight: 300;
+        font-family: 'Golos Text';
+        font-weight: 700;
+        font-size: 30px;
         color: #28223C;
         line-height: 1.2;
         margin: 0;

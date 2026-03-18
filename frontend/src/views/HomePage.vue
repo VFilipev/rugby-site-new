@@ -8,7 +8,7 @@
                 <nav class="d-flex justify-content-between align-items-start header-nav d-none d-md-flex">
                     <!-- Left Logo - Витязь -->
                     <div class="logo-left">
-                        <img src="@/assets/logo-vityaz-old.svg" alt="Витязь" class="logo-vityaz">
+                        <img src="@/assets/Vityaz_logo_navy_2.1.png" alt="Витязь" class="logo-vityaz">
                     </div>
 
                     <!-- Center Navigation -->
@@ -174,7 +174,7 @@
                     МАТЧИ
                 </div>
                 <div class="section-item section-item--right">
-                    2025
+                    2026
                 </div>
             </div>
         </div>
@@ -190,7 +190,7 @@
                     СОБЫТИЯ
                 </div>
                 <div class="section-item section-item--right">
-                    2025
+                    2026
                 </div>
             </div>
             <EventHomePage />
@@ -221,7 +221,7 @@
 
                 <div class="logo-1">
                     <a href="https://www.eurochem.ru/" target="_blank" rel="noopener noreferrer" @click="openEuroChem">
-                        <img src="@/assets/eurochem_logo.png" style="max-height: 114px" alt="Лого Еврохим">
+                        <img src="@/assets/eurochem_logo.png" width="228px" alt="Лого Еврохим">
                     </a>
                 </div>
                 <div class="logo-2">
@@ -377,6 +377,11 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+.logo-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* Header Navigation Styles */
 .header-nav_item a {
     color: #fff;
@@ -459,8 +464,9 @@ html {
 
 .section-title {
     color: #28223C;
-    font-size: 57px;
-    font-family: 'Rossika';
+    font-size: 30px;
+    font-family: 'Golos Text';
+    font-weight: 700;
     letter-spacing: -0.02em;
 }
 
@@ -562,7 +568,7 @@ html {
 }
 
 .logo-vityaz {
-    width: 145px;
+    width: 98px;
     height: auto;
     margin-top: 38px;
 }
@@ -891,7 +897,7 @@ html {
 
     /* Section titles mobile */
     .section-title {
-        font-size: 40px;
+        font-size: 30px;
     }
 
     .section-item {
@@ -935,7 +941,7 @@ html {
     }
 
     .section-title {
-        font-size: 35px;
+        font-size: 30px;
     }
 
     .section-item {
@@ -1269,7 +1275,7 @@ html {
     }
 
     .logo-1 img {
-        max-height: 135px;
+        width: 175px;
         height: auto;
     }
 

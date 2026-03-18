@@ -6,7 +6,7 @@
             <!-- Единый цикл по карточкам с условным шаблоном -->
             <template v-for="card in combinedCardsList" :key="`${card.type}-${card.id}`">
                 <!-- Карточка матча -->
-                <div class="match-card" v-if="card && card.type === 'match'">
+                <div class="match-card" :class="{'is-women': card.is_women}" v-if="card && card.type === 'match'">
                     <div class="row">
                         <div class="col-12 header-wrapper">
                             <div class="d-flex justify-content-center">
@@ -461,6 +461,9 @@ onUnmounted(() => {
     color: white;
     display: flex;
     flex-direction: column;
+}
+.match-card.is-women {
+    background: #ED1B73;
 }
 
 .match-date {

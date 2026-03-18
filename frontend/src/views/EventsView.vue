@@ -43,7 +43,7 @@ onMounted(async () => {
                         СОБЫТИЯ
                     </div>
                     <div class="section-item section-item--right">
-                        2025
+                        2026
                     </div>
                 </div>
                 <div class="row-news_wrapper">
@@ -208,8 +208,9 @@ onMounted(async () => {
 
 .section-title {
     color: #28223C;
-    font-size: 57px;
-    font-family: 'Rossika';
+    font-size: 30px;
+    font-family: 'Golos Text';
+    font-weight: 700;
     letter-spacing: -0.02em;
 }
 

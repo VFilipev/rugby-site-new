@@ -78,7 +78,7 @@ onMounted(() => {
 </script>
 <template>
     <div>
-        <AppHeader />
+        <AppHeader :logoVariant="'with'"/>
         <section class="man-team-section">
             <div class="team-container">
                 <div class="section-header-wrapper man">
@@ -108,7 +108,7 @@ onMounted(() => {
                     </div>
                     <div class="player" v-for="player in manPlayersList" :key="player.id + 'man'">
                         <div class="photo">
-                            <img :src="player.photo" alt="pl1">
+                            <img :src="player.photo ? player.photo : '/media/players/pl-no-photo.png'" alt="pl1">
                         </div>
                         <div class="name-wrapper d-flex justify-content-between">
                             <div class="name">{{ player.full_name }}</div>
@@ -153,7 +153,7 @@ onMounted(() => {
                     </div>
                     <div class="player" v-for="player in womanPlayersList" :key="player.id + 'woman'">
                         <div class="photo">
-                            <img :src="player.photo" alt="pl1">
+                            <img :src="player.photo ? player.photo : '/media/players/plw-no-photo.png'" alt="pl1">
                         </div>
                         <div class="name-wrapper d-flex justify-content-between">
                             <div class="name">{{ player.full_name }}</div>
@@ -541,8 +541,9 @@ onMounted(() => {
 
 .section-title {
     color: #28223C;
-    font-size: 57px;
-    font-family: 'Rossika';
+    font-size: 30px;
+    font-family: 'Golos Text';
+    font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 0.7;
 }

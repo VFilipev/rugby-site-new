@@ -7,7 +7,7 @@
                 <nav class="d-flex justify-content-between align-items-start header-nav d-none d-md-flex">
                     <!-- Left Logo - Витязь -->
                     <div class="logo-left" @click="goToHome">
-                            <img src="@/assets/logo-vityaz.svg" alt="Витязь" class="logo-vityaz">
+                            <img src="@/assets/Vityaz_logo_navy_2.1.png" alt="Витязь" class="logo-vityaz">
                     </div>
 
                     <!-- Center Navigation -->
@@ -537,8 +537,9 @@ html {
 
 .section-title {
     color: #28223C;
-    font-size: 57px;
-    font-family: 'Rossika';
+    font-size: 30px;
+    font-family: 'Golos Text';
+    font-weight: 700;
     letter-spacing: -0.02em;
 }
 
@@ -553,7 +554,7 @@ html {
 }
 
 .logo-vityaz {
-    width: 227px;
+    width: 98px;
     height: auto;
     margin-top: 38px;
     filter: brightness(0) invert(1);
@@ -1319,7 +1320,7 @@ html {
     }
 
     .mobile-section-title {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     .school-name {

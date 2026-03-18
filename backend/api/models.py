@@ -64,6 +64,7 @@ class MatchCard(models.Model):
     score_team_a = models.PositiveIntegerField(default=0, verbose_name="Счет Команда А")
     score_team_b = models.PositiveIntegerField(default=0, verbose_name="Счет команда Б")
     is_hidden = models.BooleanField(default=False, verbose_name="Скрыть карточку")
+    is_women = models.BooleanField(default=False, verbose_name="Женская команда", null=True, blank=True)
 
     class Meta:
         verbose_name = "Матч"
@@ -83,7 +84,7 @@ class TournamentCard(models.Model):
     position = models.PositiveIntegerField(verbose_name="Место в турнирной таблице")
     team = models.CharField(max_length=200, verbose_name="Команда")
     is_hidden = models.BooleanField(default=False, verbose_name="Скрыть карточку")
-
+    is_women = models.BooleanField(default=False, verbose_name="Женская команда", null=True, blank=True)
     class Meta:
         verbose_name = "Турнир"
         verbose_name_plural = "Турниры"
@@ -117,7 +118,7 @@ class Sponsor(models.Model):
     """Модель спонсора"""
     name = models.CharField(max_length=200, verbose_name="Название")
     logo = models.ImageField(upload_to='sponsors/', verbose_name="Лого")
-
+    url = models.URLField(verbose_name="Ссылка", null=True, blank=True)
     class Meta:
         verbose_name = "Спонсор"
         verbose_name_plural = "Спонсоры"

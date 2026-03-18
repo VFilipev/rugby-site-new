@@ -4,7 +4,7 @@
             <div class="footer-container">
                 <div class="row p-0">
                     <div class="col-2">
-                        <img src="@/assets/footer_logo.svg" alt="logo">
+                        <img src="@/assets/Vityaz_logo_navy_2.1.png" width="75px" alt="logo">
                     </div>
                     <div class="col-4">
                         <div class="contact-wrapper">

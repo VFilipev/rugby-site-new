@@ -50,7 +50,8 @@ class MatchCardSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'date', 'date_formatted', 'league', 'venue',
             'team_a', 'team_b',
-            'score_team_a', 'score_team_b', 'is_hidden'
+            'score_team_a', 'score_team_b', 'is_hidden',
+            'is_women'
         ]
 
 
@@ -61,7 +62,7 @@ class TournamentCardSerializer(serializers.ModelSerializer):
         model = TournamentCard
         fields = [
             'id', 'date_start', 'date_end', 'date_formatted', 'league', 'venue',
-            'position', 'team', 'is_hidden'
+            'position', 'team', 'is_hidden', 'is_women'
         ]
 
 

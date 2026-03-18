@@ -112,7 +112,7 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import logoVityazWithout from '@/assets/logo_vityaz_without.png'
-import logoVityaz from '@/assets/logo-vityaz-no-text.svg'
+import logoVityaz from '@/assets/Vityaz_logo_navy_2.1.png'
 
 // Props
 const props = defineProps({
